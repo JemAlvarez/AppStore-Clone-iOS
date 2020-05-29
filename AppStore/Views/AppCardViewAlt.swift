@@ -42,23 +42,22 @@ struct AppCardViewAlt: View {
                 HStack {
                     Image(image)
                         .resizable()
+                        .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .scaledToFill()
-                        .frame(height: 250)
                     Image(image)
                         .resizable()
+                        .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .scaledToFill()
-                        .frame(height: 250)
                     Image(image)
                         .resizable()
+                        .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .scaledToFill()
-                        .frame(height: 250)
                 }
+                .padding(.top, 10)
                 .padding(.horizontal, 30)
                 
                 Text("Be the last one standing from 100 players.")
+                    .font(.system(size: 15))
                     .padding(.vertical)
             }
         }
