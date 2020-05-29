@@ -1,0 +1,6 @@
+module SwiftUIPager {
+  umbrella header "SwiftUIPager-umbrella.h"
+
+  export *
+  module * { export * }
+}

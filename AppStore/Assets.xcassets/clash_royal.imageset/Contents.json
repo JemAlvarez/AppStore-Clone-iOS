@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "clash_royal.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
