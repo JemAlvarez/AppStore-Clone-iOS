@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct ThreeAppCardView: View {
-    var apps : [AppLine]
+    var apps : [AppInfo]
     
     var body: some View {
         VStack (spacing: 0){
-            NavigationLink (destination: AppView(appInfo: AppInfo(name: apps[0].title))){
+            NavigationLink (destination: AppView(appInfo: Apps.allApps[0])){
                 HStack (spacing: 0){
-                    Image(apps[0].image)
+                    Image(apps[0].icon)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 62)
@@ -58,9 +58,9 @@ struct ThreeAppCardView: View {
                 .padding(.leading, 70)
                 .padding(.trailing)
             
-            NavigationLink (destination: AppView(appInfo: AppInfo(name: apps[1].title))){
+            NavigationLink (destination: AppView(appInfo: Apps.allApps[0])){
                 HStack (spacing: 0){
-                    Image(apps[1].image)
+                    Image(apps[1].icon)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 62)
@@ -79,7 +79,7 @@ struct ThreeAppCardView: View {
                         
                     }) {
                         if !apps[1].downloaded {
-                            Text("OPEN")
+                            Text("GET")
                                 .fontWeight(.bold)
                                 .foregroundColor(.blue)
                                 .padding(.horizontal, 23)
@@ -103,9 +103,9 @@ struct ThreeAppCardView: View {
                 .padding(.leading, 70)
                 .padding(.trailing)
             
-            NavigationLink (destination: AppView(appInfo: AppInfo(name: apps[2].title))){
+            NavigationLink (destination: AppView(appInfo: Apps.allApps[0])){
                 HStack (spacing: 0){
-                    Image(apps[2].image)
+                    Image(apps[2].icon)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 62)
@@ -124,7 +124,7 @@ struct ThreeAppCardView: View {
                         
                     }) {
                         if !apps[2].downloaded {
-                            Text("OPEN")
+                            Text("GET")
                                 .fontWeight(.bold)
                                 .foregroundColor(.blue)
                                 .padding(.horizontal, 23)
@@ -147,8 +147,8 @@ struct ThreeAppCardView: View {
     }
 }
 
-struct ThreeAppCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThreeAppCardView(apps: AppCards.threeAppCards[0])
-    }
-}
+//struct ThreeAppCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ThreeAppCardView(apps: Apps..threeAppCards[0])
+//    }
+//}

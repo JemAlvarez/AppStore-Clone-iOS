@@ -1,17 +1,13 @@
 import SwiftUI
 
 struct AppCardViewAlt: View {
-    let feature: String
-    let title: String
-    let subTitle: String
-    let image: String
-    let appInfo: AppInfo
+    let app: AppInfo
     
     var body: some View {
-        NavigationLink (destination: AppView(appInfo: appInfo)) {
+        NavigationLink (destination: AppView(appInfo: app)) {
             VStack (alignment: .leading, spacing: 0) {
                 HStack {
-                    Image("icon")
+                    Image(app.icon)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 62)
@@ -20,9 +16,9 @@ struct AppCardViewAlt: View {
                         .padding(.trailing, 5)
                     
                     VStack (alignment: .leading) {
-                        Text("PUBG MOBILE - Mad Miramar")
+                        Text(app.title)
                             .font(.system(size: 15))
-                        Text("Season 13 adds cool new toys")
+                        Text(app.subTitle)
                             .font(.system(size: 12))
                             .opacity(0.5)
                     }
@@ -40,15 +36,15 @@ struct AppCardViewAlt: View {
                 }
                 
                 HStack {
-                    Image(image)
+                    Image(app.preview[0])
                         .resizable()
                         .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                    Image(image)
+                    Image(app.preview[1])
                         .resizable()
                         .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                    Image(image)
+                    Image(app.preview[2])
                         .resizable()
                         .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -56,7 +52,7 @@ struct AppCardViewAlt: View {
                 .padding(.top, 10)
                 .padding(.horizontal, 30)
                 
-                Text("Be the last one standing from 100 players.")
+                Text(app.feature!)
                     .font(.system(size: 15))
                     .padding(.vertical)
             }
@@ -65,8 +61,8 @@ struct AppCardViewAlt: View {
     }
 }
 
-struct AppCardViewAlt_Previews: PreviewProvider {
-    static var previews: some View {
-        AppCardViewAlt(feature: "Major Update", title: "PUBG MOBILE - Mad Miramar", subTitle: "Season 13 adds cool new toys", image: "pubg_v", appInfo: AppInfo(name: "PUBG"))
-    }
-}
+//struct AppCardViewAlt_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AppCardViewAlt(feature: "Major Update", title: "PUBG MOBILE - Mad Miramar", subTitle: "Season 13 adds cool new toys", image: "pubg_v", appInfo: AppInfo(name: "PUBG"))
+//    }
+//}

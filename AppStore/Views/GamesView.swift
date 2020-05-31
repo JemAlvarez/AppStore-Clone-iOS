@@ -8,17 +8,31 @@ import SwiftUIPager
 // tap tab bar to scroll up
 
 struct GamesView: View {
-    let featuredApps = AppCards.appCards
-    let thisWeekApps = AppCards.threeAppCards
+    let featuredApps = Array(Apps.allApps[0..<10])
     @State var featuredSection = 0
+    
+    let thisWeekApps = [Array(Apps.allApps[0...3]), Array(Apps.allApps[0...2]), Array(Apps.allApps[3...5]),
+        Array(Apps.allApps[6...8]), Array(Apps.allApps[9...11]), Array(Apps.allApps[12...14]),
+        Array(Apps.allApps[15...17]), Array(Apps.allApps[18...20]), Array(Apps.allApps[21...23])
+    ]
     @State var weekSection = 0
+    
     @State var arcadeSection = 0
+    
     @State var popularSection = 0
+    
     @State var allNewSection = 0
+    
     @State var moreGamesSection = 0
+    
+    let limitedEventsApps = Array(Apps.allApps[(Apps.allApps.count - 3)...])
     @State var limitedEventsSection = 0
+    
+    let comingSoonApps = [Array(Apps.allApps[0...3]), Array(Apps.allApps[0...2]), Array(Apps.allApps[3...5]), Array(Apps.allApps[6...8])]
     @State var comingSoonSection = 0
+    
     @State var groundUpSection = 0
+    
     
     var body: some View {
         NavigationView {
@@ -26,9 +40,9 @@ struct GamesView: View {
                 // featured
                 Pager(page: $featuredSection,
                      data: featuredApps,
-                     id: \.title,
+                     id: \.id,
                      content: { app in
-                          AppCardView(feature: app.feature, title: app.title, subTitle: app.subTitle, image: app.image, appInfo: app.appInfo)
+                          AppCardView(app: app)
                 })
                 .itemSpacing(10)
                 .alignment(featuredSection == 0 ? .start : .center)
@@ -36,6 +50,7 @@ struct GamesView: View {
                 .frame(height: 400)
                 .padding(.vertical, -45)
                 
+                // sections
                 VStack {
                     // this week
                     VStack {
@@ -57,7 +72,7 @@ struct GamesView: View {
 
                         Pager(page: $weekSection,
                              data: thisWeekApps,
-                             id: \.[0].title,
+                             id: \.[0].id,
                              content: { line in
                                   ThreeAppCardView(apps: line)
                         })
@@ -85,7 +100,7 @@ struct GamesView: View {
 
                         Pager(page: $arcadeSection,
                              data: thisWeekApps,
-                             id: \.[0].title,
+                             id: \.[0].id,
                              content: { line in
                                   ThreeAppCardView(apps: line)
                         })
@@ -113,7 +128,7 @@ struct GamesView: View {
 
                         Pager(page: $popularSection,
                              data: thisWeekApps,
-                             id: \.[0].title,
+                             id: \.[0].id,
                              content: { line in
                                   ThreeAppCardView(apps: line)
                         })
@@ -147,7 +162,7 @@ struct GamesView: View {
 
                         Pager(page: $allNewSection,
                              data: thisWeekApps,
-                             id: \.[0].title,
+                             id: \.[0].id,
                              content: { line in
                                   ThreeAppCardView(apps: line)
                         })
@@ -175,7 +190,7 @@ struct GamesView: View {
 
                         Pager(page: $moreGamesSection,
                              data: thisWeekApps,
-                             id: \.[0].title,
+                             id: \.[0].id,
                              content: { line in
                                   ThreeAppCardView(apps: line)
                         })
@@ -202,10 +217,10 @@ struct GamesView: View {
                         }
 
                         Pager(page: $limitedEventsSection,
-                             data: featuredApps,
-                             id: \.title,
+                             data: limitedEventsApps,
+                             id: \.id,
                              content: { app in
-                                  AppCardViewAlt(feature: app.feature, title: app.title, subTitle: app.subTitle, image: "pubg_v", appInfo: app.appInfo)
+                                AppCardViewAlt(app: app)
                         })
                         .itemSpacing(10)
                         .alignment(limitedEventsSection == 0 ? .start : .center)
@@ -233,8 +248,8 @@ struct GamesView: View {
                         }
 
                         Pager(page: $comingSoonSection,
-                             data: thisWeekApps,
-                             id: \.[0].title,
+                             data: comingSoonApps,
+                             id: \.[0].id,
                              content: { line in
                                   TwoAppCardView(apps: line)
                         })
@@ -261,8 +276,8 @@ struct GamesView: View {
                         }
 
                         Pager(page: $groundUpSection,
-                             data: thisWeekApps,
-                             id: \.[0].title,
+                             data: comingSoonApps,
+                             id: \.[0].id,
                              content: { line in
                                   TwoAppCardView(apps: line)
                         })
@@ -346,13 +361,95 @@ struct GamesView: View {
                         VStack (alignment: .leading) {
                             Text("Simulation")
                                 .font(.system(size: 22))
-                            
                         }
+                        
+                        Spacer()
                     }
                 }
                 
                 // quick links + buttons + terms and conditions
-                
+                VStack {
+                    VStack(alignment: .leading) {
+                        Divider()
+                        Text("Quick Links")
+                            .font(.system(size: 23))
+                            .fontWeight(.bold)
+                    }
+                    .padding(.bottom, 23)
+                    
+                    VStack(alignment: .leading) {
+                        Text("Try Apple Arcade")
+                            .foregroundColor(.blue)
+                            .font(.system(size: 22))
+                        Divider()
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("Parents' Guide to the App Store")
+                            .foregroundColor(.blue)
+                            .font(.system(size: 22))
+                        Divider()
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("About In-App Purchases")
+                            .foregroundColor(.blue)
+                            .font(.system(size: 22))
+                        Divider()
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("Apps and Games for Your Kids")
+                            .foregroundColor(.blue)
+                            .font(.system(size: 22))
+                        Divider()
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("About Personalization")
+                            .foregroundColor(.blue)
+                            .font(.system(size: 22))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .padding(.bottom, 35)
+                    
+                    VStack {
+                        Text("Redeem")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color(red: 0.3, green: 0.3, blue: 0.3).opacity(0.3))
+                            .cornerRadius(10)
+                            .padding(.bottom, 5)
+                        Text("Send Gift")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color(red: 0.3, green: 0.3, blue: 0.3).opacity(0.3))
+                            .cornerRadius(10)
+                            .padding(.bottom, 5)
+                        Text("Add Funds to Apple ID")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color(red: 0.3, green: 0.3, blue: 0.3).opacity(0.3))
+                            .cornerRadius(10)
+                    }
+                    .padding(.bottom)
+                    
+                    VStack(alignment: .leading) {
+                        Divider()
+                        HStack {
+                            Text("Terms & Conditions")
+                            Image(systemName: "chevron.right")
+                        }
+                        .opacity(0.7)
+                        .padding(.bottom)
+                    }
+                }
             }
             .padding(.horizontal)
             .navigationBarTitle("Games")

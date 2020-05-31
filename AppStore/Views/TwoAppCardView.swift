@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct TwoAppCardView: View {
-    var apps : [AppLine]
+    var apps : [AppInfo]
     
     var body: some View {
         VStack (alignment: .leading, spacing: 0){
-            NavigationLink (destination: AppView(appInfo: AppInfo(name: apps[0].title))){
+            NavigationLink (destination: AppView(appInfo: Apps.allApps[0])){
                 HStack (spacing: 0){
-                    Image(apps[0].image)
+                    Image(apps[0].icon)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 80)
@@ -61,9 +61,9 @@ struct TwoAppCardView: View {
                 .padding(.trailing)
                 .padding(.top)
             
-            NavigationLink (destination: AppView(appInfo: AppInfo(name: apps[1].title))){
+            NavigationLink (destination: AppView(appInfo: Apps.allApps[0])){
                 HStack (spacing: 0){
-                    Image(apps[1].image)
+                    Image(apps[1].icon)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 80)
@@ -107,8 +107,8 @@ struct TwoAppCardView: View {
     }
 }
 
-struct TwoAppCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        TwoAppCardView(apps: AppCards.threeAppCards[0])
-    }
-}
+//struct TwoAppCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TwoAppCardView(apps: AppCards.threeAppCards[0])
+//    }
+//}

@@ -35,16 +35,16 @@ struct AppLine: Equatable {
 
 struct AppCards {
     static let appCards = [
-        AppCard(feature: "Major Update", title: "PUBG MOBILE - Mad Miramar", subTitle: "Season 13 adds cool new toys", image: "pubg", appInfo: AppInfo(name: "PUBG")),
-        AppCard(feature: "Play with friends", title: "Mario Kart Tour", subTitle: "Multiplayer Madness", image: "mario_kart", appInfo: AppInfo(name: "MARIO KART")),
-        AppCard(feature: "What we're playing", title: "Tetris®", subTitle: "Classic comeback", image: "tetris", appInfo: AppInfo(name: "TETRIS")),
-        AppCard(feature: "Major Update", title: "The Sims™ Mobile", subTitle: "Now build multistory homes", image: "sims", appInfo: AppInfo(name: "THE SIMS")),
-        AppCard(feature: "Editors' Choice", title: "Clash Royale", subTitle: "Epic Real-Time Card Battles!", image: "clash_royal", appInfo: AppInfo(name: "CLASH ROYALE")),
-        AppCard(feature: "Welcome to season 6", title: "Call of Duty®: Mobile", subTitle: "Battle Royale, Sniper, 5v5", image: "cod", appInfo: AppInfo(name: "COD")),
-        AppCard(feature: "Fortnite Chapter 2", title: "Fortnite", subTitle: "Battle Royale & Party Hub", image: "fortnite", appInfo: AppInfo(name: "FORTNITE")),
-        AppCard(feature: "Major Update", title: "Fruit Ninja®", subTitle: "Slice up a juice storm!", image: "fruit_ninja", appInfo: AppInfo(name: "FRUIT NINJA")),
-        AppCard(feature: "Gen 9", title: "Pokémon GO", subTitle: "Discover Pokémon worldwide", image: "pkgo", appInfo: AppInfo(name: "POKEMON GO")),
-        AppCard(feature: "Autobattler", title: "TFT: Teamfight Tactics", subTitle: "League of Legends Strategy", image: "tft", appInfo: AppInfo(name: "TFT")),
+        AppCard(feature: "Major Update", title: "PUBG MOBILE - Mad Miramar", subTitle: "Season 13 adds cool new toys", image: "pubg", appInfo: Apps.allApps[0]),
+        AppCard(feature: "Play with friends", title: "Mario Kart Tour", subTitle: "Multiplayer Madness", image: "mario_kart", appInfo: Apps.allApps[0]),
+        AppCard(feature: "What we're playing", title: "Tetris®", subTitle: "Classic comeback", image: "tetris", appInfo: Apps.allApps[0]),
+        AppCard(feature: "Major Update", title: "The Sims™ Mobile", subTitle: "Now build multistory homes", image: "sims", appInfo: Apps.allApps[0]),
+        AppCard(feature: "Editors' Choice", title: "Clash Royale", subTitle: "Epic Real-Time Card Battles!", image: "clash_royal", appInfo: Apps.allApps[0]),
+        AppCard(feature: "Welcome to season 6", title: "Call of Duty®: Mobile", subTitle: "Battle Royale, Sniper, 5v5", image: "cod", appInfo: Apps.allApps[0]),
+        AppCard(feature: "Fortnite Chapter 2", title: "Fortnite", subTitle: "Battle Royale & Party Hub", image: "fortnite", appInfo: Apps.allApps[0]),
+        AppCard(feature: "Major Update", title: "Fruit Ninja®", subTitle: "Slice up a juice storm!", image: "fruit_ninja", appInfo: Apps.allApps[0]),
+        AppCard(feature: "Gen 9", title: "Pokémon GO", subTitle: "Discover Pokémon worldwide", image: "pkgo", appInfo: Apps.allApps[0]),
+        AppCard(feature: "Autobattler", title: "TFT: Teamfight Tactics", subTitle: "League of Legends Strategy", image: "tft", appInfo: Apps.allApps[0]),
     ]
     
     static let threeAppCards = [
