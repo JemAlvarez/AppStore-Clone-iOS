@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "true_skate_banner.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

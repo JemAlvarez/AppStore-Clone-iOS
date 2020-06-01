@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "call_of_duty_mobile_banner.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

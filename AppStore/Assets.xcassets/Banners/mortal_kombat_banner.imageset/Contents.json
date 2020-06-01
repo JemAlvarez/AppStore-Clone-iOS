@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "mortal_kombat_banner.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

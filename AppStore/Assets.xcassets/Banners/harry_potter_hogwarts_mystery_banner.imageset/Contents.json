@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "harry_potter_hogwarts_mystery_banner.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

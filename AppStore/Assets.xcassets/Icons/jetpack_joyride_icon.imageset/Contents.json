@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "jetpack_joyride_icon.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

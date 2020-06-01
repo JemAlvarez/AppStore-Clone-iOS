@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "subway_surfers_icon.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

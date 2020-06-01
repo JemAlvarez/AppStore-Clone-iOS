@@ -11,9 +11,10 @@ struct GamesView: View {
     let featuredApps = Array(Apps.allApps[0..<10])
     @State var featuredSection = 0
     
-    let thisWeekApps = [Array(Apps.allApps[0...3]), Array(Apps.allApps[0...2]), Array(Apps.allApps[3...5]),
+    let thisWeekApps = [Array(Apps.allApps[0...2]), Array(Apps.allApps[3...5]),
         Array(Apps.allApps[6...8]), Array(Apps.allApps[9...11]), Array(Apps.allApps[12...14]),
-        Array(Apps.allApps[15...17]), Array(Apps.allApps[18...20]), Array(Apps.allApps[21...23])
+        Array(Apps.allApps[15...17]), Array(Apps.allApps[18...20]), Array(Apps.allApps[21...23]),
+        Array(Apps.allApps[24...26])
     ]
     @State var weekSection = 0
     
